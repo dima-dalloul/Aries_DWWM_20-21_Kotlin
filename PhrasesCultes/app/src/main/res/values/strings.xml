@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Phrases Cultes</string>
+
+    <string-array name="phrases_cultes_string_array">
+        <item>Quand une femme change d\’homme, elle change de coiffure</item>
+        <item>Geek is sexy</item>
+        <item>Mais? Qu\'est ce que c\'est que cette matière?</item>
+        <item>Je vous ai beaucoup moins bien réussi que le porc</item>
+        <item>C\'est Kloug, c\'est roulé sous les aisselles</item>
+        <item>Figurez-vous que Thérèse n\'est pas moche, elle n\'a pas un physique facile</item>
+        <item>C\'est fin, c\'est très fin, ça se mange sans fin</item>
+        <item>Homme en retard, liaison dans le tiroir</item>
+        <item>Je ne vous jette pas la pierre, Pierre, mais j\'étais à deux doigts de m\'agacer</item>
+        <item>Jacquouille : Messire, un Sarrasin dans une charriote du diable ! C\'est tout ferré, y a point de bœuf pour tirer !</item>
+        <item>Si tu conduis ta voiture comme tu baise t\'étonne pas d\'être cocu</item>
+        <item>Les cons ça ose tout, c\'est même à ça qu\'on les reconnait!</item>
+        <item>Mais... mais qu\'est-ce que c\'est que cette matière ? Mais c\'est d\'la merde ?!</item>
+        <item>Il faut mettre son doigt dans le cul du coq</item>
+        <item>Il n\’y a pas de code de l\’honneur entre voleurs…. Sauf entre nous, bien sûr !</item>
+        <item>Il était normand par sa mère et breton par un ami de son père.</item>
+        <item>J\'aime bien quand ça se passe sans accrocs</item>
+        <item>Le talent permet de gagner des matchs, mais le travail d\’équipe et l\’intelligence permettent de gagner les championnats</item>
+        <item>Moi le matin, c\'est pas la salle de bain que je bloque, c\'est les toilettes!</item>
+        <item>Qu\'est-ce qui est jaune et qui attends ?</item>
+    </string-array>
+</resources>
