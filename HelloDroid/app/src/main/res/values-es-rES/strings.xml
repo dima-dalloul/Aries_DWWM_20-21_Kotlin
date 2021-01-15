@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Food">Comida</string>
+    <string name="hello">Hola</string>
+    <string name="hello_world">Hola al mundo</string>
+</resources>
