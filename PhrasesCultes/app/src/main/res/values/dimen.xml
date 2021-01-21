@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="pageAccueilDimen">24sp</dimen>
-
+    <dimen name="pageAccueilDimen">12sp</dimen>
+    <dimen name="marge_echo">13sp</dimen>
+    <dimen name="taille_texte_echo">24px</dimen>
 </resources>
