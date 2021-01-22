@@ -3,4 +3,5 @@
     <dimen name="pageAccueilDimen">12sp</dimen>
     <dimen name="marge_echo">13sp</dimen>
     <dimen name="taille_texte_echo">24px</dimen>
+    <dimen name="taille_padding_boutons_linear_layout">24sp</dimen>
 </resources>
