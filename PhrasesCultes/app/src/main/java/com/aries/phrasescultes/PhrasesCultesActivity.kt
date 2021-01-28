@@ -44,8 +44,8 @@ class PhrasesCultesActivity : AppCompatActivity() {
         // Modification de la largeur de la TextView
         val parametres = helloWorldTextView?.layoutParams as LinearLayout.LayoutParams
         // EQUIVALENT A: val parametres : LinearLayout.LayoutParams = helloWorldTextView?.layoutParams
-        parametres.width = ConstraintLayout.LayoutParams.MATCH_PARENT
-        parametres.height = ConstraintLayout.LayoutParams.WRAP_CONTENT
+        parametres.width = LinearLayout.LayoutParams.MATCH_PARENT
+        parametres.height = LinearLayout.LayoutParams.WRAP_CONTENT
         helloWorldTextView.layoutParams = parametres
 
         // Modification du texte (et de la taille et de la couleur du texte) de la TextView
@@ -61,25 +61,17 @@ class PhrasesCultesActivity : AppCompatActivity() {
         Log.d(TAG, ""+phraseIndiceAleatoire)
         helloWorldTextView.setText(listePhrasesCultes.get(phraseIndiceAleatoire))
 
-        // FONCTIONNALITÉ : Création d'un écho
-        // Récupération d'accès sur le Bouton, l'EditText et le TextView
-        val echoTextView : TextView = findViewById(R.id.echoTextView)
-        val echoEditText = findViewById<EditText>(R.id.echoInputUtilisateur)
-        val echoBouton = findViewById<Button>(R.id.echoBouton)
 
-        // On met un écouteur sur le bouton Echo
-        echoBouton.setOnClickListener{
-            Toast.makeText(this, "Echo", Toast.LENGTH_SHORT).show()
 
-            // On récupère le texte écrit par l'utilisateur
-            var texteDeLaPartDeLUtilisateur = echoEditText.text
+        // Modification dynamique du spinner, càd la liste déroulante
+        // Étape 1 : construire la liste des choix de la liste déroulante
+        var tableauPhrasesCultes : Array<String> = resources.getStringArray(R.array.phrases_cultes_string_array)
 
-            Log.i(TAG, "l'Utilisateur a écrit : " + texteDeLaPartDeLUtilisateur)
+        // Étape 2 : transformer le tableau de String en un objet compréhensible par la liste déroulante => on utilisera un adaptateur
+        var adaptateurSpinner = ArrayAdapter(this, android.R.layout.simple_spinner_item, tableauPhrasesCultes)
 
-            // On affiche le texte écrit par l'utilisateur dans la TextView correspondante
-            echoTextView.setText(texteDeLaPartDeLUtilisateur)
-            echoTextView.setTextColor(ContextCompat.getColor(this, R.color.pink))
-            echoTextView.setTextSize(resources.getDimension(R.dimen.pageAccueilDimen))
-        }
+        // Étape 3 : lier cet adaptateur au spinner (liste déroulante) en question
+        val spinnerPhrasesCultes : Spinner = findViewById(R.id.spinner_phrases_cultes)
+        spinnerPhrasesCultes.adapter = adaptateurSpinner
     }
 }

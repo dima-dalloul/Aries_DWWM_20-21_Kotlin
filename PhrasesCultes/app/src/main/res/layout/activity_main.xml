@@ -8,31 +8,6 @@
     tools:context=".PhrasesCultesActivity"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/echoInputUtilisateur"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Ecrire une phrase"
-        android:inputType="textPersonName" />
-
-    <Button
-        android:id="@+id/echoBouton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Echo"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="177dp" />
-
-    <TextView
-        android:id="@+id/echoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/marge_echo"
-        android:text="Echo"
-        app:layout_constraintBottom_toTopOf="@+id/echoBouton"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/hello_world_text_view"
         android:layout_width="wrap_content"
@@ -44,5 +19,10 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.894" />
+
+    <Spinner
+        android:id="@+id/spinner_phrases_cultes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
