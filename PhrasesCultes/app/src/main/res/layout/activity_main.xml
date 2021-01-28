@@ -25,4 +25,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/button_go_to_cours3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aller à Cours 3" />
+
 </LinearLayout>

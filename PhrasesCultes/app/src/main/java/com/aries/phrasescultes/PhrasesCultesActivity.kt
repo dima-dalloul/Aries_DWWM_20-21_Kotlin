@@ -1,5 +1,6 @@
 package com.aries.phrasescultes
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -61,8 +62,6 @@ class PhrasesCultesActivity : AppCompatActivity() {
         Log.d(TAG, ""+phraseIndiceAleatoire)
         helloWorldTextView.setText(listePhrasesCultes.get(phraseIndiceAleatoire))
 
-
-
         // Modification dynamique du spinner, càd la liste déroulante
         // Étape 1 : construire la liste des choix de la liste déroulante
         var tableauPhrasesCultes : Array<String> = resources.getStringArray(R.array.phrases_cultes_string_array)
@@ -73,5 +72,17 @@ class PhrasesCultesActivity : AppCompatActivity() {
         // Étape 3 : lier cet adaptateur au spinner (liste déroulante) en question
         val spinnerPhrasesCultes : Spinner = findViewById(R.id.spinner_phrases_cultes)
         spinnerPhrasesCultes.adapter = adaptateurSpinner
+
+        // Navigation vers l'activity Cours 3
+        // Étape 1 : récupérer une référence vers le bouton qui permet de naviguer
+        var boutonVersCours3Activity : Button = findViewById(R.id.button_go_to_cours3)
+
+        // Étape 2 : mettre un écouteur sur ce bouton afin que si on clique dessus, on puisse effectuer la navigation
+        boutonVersCours3Activity.setOnClickListener {
+
+            // Étape 3 : créer l'intention de navigation vers Activity Cours 3 et la lancer
+            var intentionVersCours3 : Intent = Intent(this, Cours3Activity::class.java)
+            startActivity(intentionVersCours3)
+        }
     }
 }
