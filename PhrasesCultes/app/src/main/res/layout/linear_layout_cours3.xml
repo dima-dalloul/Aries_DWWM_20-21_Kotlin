@@ -20,6 +20,7 @@
             android:textColor="@color/white" />
 
         <EditText
+            android:id="@+id/cours3_edittext_prenom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -43,6 +44,7 @@
             android:textColor="@color/white" />
 
         <EditText
+            android:id="@+id/cours3_edittext_nom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -62,7 +64,7 @@
             android:layout_weight="1"/>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/bouton_ajouter_cours3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -70,7 +72,7 @@
             android:text="Ajouter" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/bouton_annuler_cours3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Annuler"
