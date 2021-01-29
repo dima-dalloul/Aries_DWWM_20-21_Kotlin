@@ -43,10 +43,10 @@ class PhrasesCultesActivity : AppCompatActivity() {
         helloWorldTextView = findViewById(R.id.hello_world_text_view)
         
         // Modification de la largeur de la TextView
-        val parametres = helloWorldTextView?.layoutParams as LinearLayout.LayoutParams
+        val parametres = helloWorldTextView?.layoutParams as RelativeLayout.LayoutParams
         // EQUIVALENT A: val parametres : LinearLayout.LayoutParams = helloWorldTextView?.layoutParams
-        parametres.width = LinearLayout.LayoutParams.MATCH_PARENT
-        parametres.height = LinearLayout.LayoutParams.WRAP_CONTENT
+        parametres.width = RelativeLayout.LayoutParams.MATCH_PARENT
+        parametres.height = RelativeLayout.LayoutParams.WRAP_CONTENT
         helloWorldTextView.layoutParams = parametres
 
         // Modification du texte (et de la taille et de la couleur du texte) de la TextView
@@ -55,10 +55,9 @@ class PhrasesCultesActivity : AppCompatActivity() {
         helloWorldTextView.setTextSize(resources.getDimension(R.dimen.pageAccueilDimen))
 
         // FONCTIONNALITÉ : Affichage d'une phrase culte aléatoire dans le TextView
-        var random : Random = Random()
         val min = 0
         val max = listePhrasesCultes.size
-        var phraseIndiceAleatoire = random.nextInt(max - min + 1)
+        var phraseIndiceAleatoire = (min until max).random()
         Log.d(TAG, ""+phraseIndiceAleatoire)
         helloWorldTextView.setText(listePhrasesCultes.get(phraseIndiceAleatoire))
 
