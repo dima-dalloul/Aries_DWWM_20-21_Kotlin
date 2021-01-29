@@ -1,6 +1,8 @@
 package com.aries.phrasescultes
 
+import android.app.Activity
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -26,11 +28,21 @@ class Cours3Activity : AppCompatActivity() {
             var nom = nomEditText.text
 
             Toast.makeText(this, "Coucou " + prenom + " " + nom, Toast.LENGTH_LONG).show()
+
+            // Cacher le clavier
+            cacherClavier(prenomEditText)
+            cacherClavier(nomEditText)
         }
 
         boutonAnnuler.setOnClickListener {
             // Si on clique sur Ajouter, alors on fera un retour en arrière
             super.onBackPressed()
         }
+    }
+
+    private fun cacherClavier(editText: EditText) {
+        val gestionnaireClavier : InputMethodManager = this.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        gestionnaireClavier.hideSoftInputFromWindow(editText.windowToken, 0)
+
     }
 }
