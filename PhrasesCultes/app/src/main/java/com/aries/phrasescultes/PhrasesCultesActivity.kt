@@ -62,7 +62,8 @@ class PhrasesCultesActivity : AppCompatActivity() {
         Log.d(TAG, ""+phraseIndiceAleatoire)
         helloWorldTextView.setText(listePhrasesCultes.get(phraseIndiceAleatoire))
 
-        // Modification dynamique du spinner, càd la liste déroulante
+        /*
+        // FONCTIONNALITÉ : Modification dynamique du spinner, càd la liste déroulante
         // Étape 1 : construire la liste des choix de la liste déroulante
         var tableauPhrasesCultes : Array<String> = resources.getStringArray(R.array.phrases_cultes_string_array)
 
@@ -72,8 +73,9 @@ class PhrasesCultesActivity : AppCompatActivity() {
         // Étape 3 : lier cet adaptateur au spinner (liste déroulante) en question
         val spinnerPhrasesCultes : Spinner = findViewById(R.id.spinner_phrases_cultes)
         spinnerPhrasesCultes.adapter = adaptateurSpinner
+        */
 
-        // Navigation vers l'activity Cours 3
+        // FONCTIONNALITÉ : Navigation vers l'activity Cours 3
         // Étape 1 : récupérer une référence vers le bouton qui permet de naviguer
         var boutonVersCours3Activity : Button = findViewById(R.id.button_go_to_cours3)
 
@@ -83,6 +85,24 @@ class PhrasesCultesActivity : AppCompatActivity() {
             // Étape 3 : créer l'intention de navigation vers Activity Cours 3 et la lancer
             var intentionVersCours3 : Intent = Intent(this, Cours3Activity::class.java)
             startActivity(intentionVersCours3)
+        }
+
+        // FONCTIONNALITÉ : Affichage des phrases cultes dans la liste view
+        // Étape 1 : construire la liste des phrases cultes
+        var tableauPhrasesCultes : Array<String> = resources.getStringArray(R.array.phrases_cultes_string_array)
+
+        // Étape 2 : transformer le tableau de String (contenant les phrases cultes) en un objet compréhensible par la ListView => on utilisera un adaptateur
+        var adapatateurListView = ArrayAdapter(this, android.R.layout.simple_list_item_1, tableauPhrasesCultes)
+
+        // Étape 3 : récupérer une référence vers la ListView
+        var listviewPhrasesCultes : ListView = findViewById(R.id.listview_phrases_cultes)
+
+        // Étape 4 : lier cet adaptateur à la ListView concernée
+        listviewPhrasesCultes.adapter = adapatateurListView
+
+        // Étape 5 : Mettre en place un écouteur de clics
+        listviewPhrasesCultes.setOnItemClickListener { parent, view, position, id ->
+            Toast.makeText(this, tableauPhrasesCultes.get(position), Toast.LENGTH_SHORT).show()
         }
     }
 }
