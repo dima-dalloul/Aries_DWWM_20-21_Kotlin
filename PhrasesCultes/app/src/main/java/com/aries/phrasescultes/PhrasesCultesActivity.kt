@@ -91,7 +91,10 @@ class PhrasesCultesActivity : AppCompatActivity() {
         var tableauPhrasesCultes : Array<String> = resources.getStringArray(R.array.phrases_cultes_string_array)
 
         // Étape 2 : transformer le tableau de String (contenant les phrases cultes) en un objet compréhensible par la ListView => on utilisera un adaptateur
-        var adapatateurListView = ArrayAdapter(this, android.R.layout.simple_list_item_1, tableauPhrasesCultes)
+        // OPTION 1: CHOSIIR UN LAYOUT FOURNI PAR ANDROID
+        //var adapatateurListView = ArrayAdapter(this, android.R.layout.simple_list_item_1, tableauPhrasesCultes)
+        // OPTION 2: CHOISIR UN LAYOUT PROPRE À NOUS et qu'on peut customiser
+        var adapatateurListView = ArrayAdapter(this, R.layout.phrasescultes_item_tetxuel_dans_la_liste, tableauPhrasesCultes)
 
         // Étape 3 : récupérer une référence vers la ListView
         var listviewPhrasesCultes : ListView = findViewById(R.id.listview_phrases_cultes)
